@@ -80,3 +80,17 @@
 # a.discard(10) # Remove the element 10
 # a.discard(11) # If the element is not there it will not Throught the eRROR where as the remove method through the "Key Error"
 
+
+# Names={'Ram','Hari','Sita'}
+# for i in Names:
+#     print(i)
+
+
+# a={1,2,3,4,5}
+# b={5,6,7,8,9}
+# union_ab=a|b
+# c=a.union(b)
+# print(union_ab)
+
+
+
