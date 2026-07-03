@@ -111,3 +111,11 @@
 #     print("Both are equal")
 # else:
 #     print("Both are Not Equal")
+
+
+a={1,2,3,4,5,6}
+b={1,2,3,4,5,6}
+if a==b:
+    print("Equal")
+else:
+    print("Not Equal")
