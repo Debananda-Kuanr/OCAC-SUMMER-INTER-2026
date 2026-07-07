@@ -42,6 +42,10 @@ The training focuses on building strong Python fundamentals, logical thinking, p
 | Day 11 | Lists, list traversal, append, reverse, extend, slicing, and list update operations |
 | Day 12 | List deletion methods, `remove`, `insert`, `pop`, `clear`, `count`, `copy`, set basics, set operations, and quadratic equation solving using `math.sqrt` |
 
+### Days 13-14: Covered in Current Work
+
+| Day | Topics Covered |
+|---|---|
 | Day 13 | MySQL introduction, creating databases and tables, inserting records, viewing table structure, selecting data, filtering with `WHERE`, updating records, deleting records, dropping tables and databases, and understanding SQL data types |
 | Day 14 | Advanced MySQL practice, `IN`, `BETWEEN`, `NOT`, `LIKE` patterns, aggregate functions such as `MIN`, `MAX`, `COUNT`, `AVG`, subqueries, and primary key constraint handling |
 
