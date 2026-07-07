@@ -119,3 +119,34 @@
 #     print("Equal")
 # else:
 #     print("Not Equal")
+
+
+
+
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+c = int(input("Enter c: "))
+if a == 0:
+    print("Not a quadratic equation")
+
+else:
+    d = b*b - 4*a*c
+    if d > 0:
+        x1 = (-b + d**0.5) / (2*a)
+        x2 = (-b - d**0.5) / (2*a)
+
+        print("Two real roots are:")
+        print("Root 1 =", x1)
+        print("Root 2 =", x2)
+    elif d == 0:
+        x = -b / (2*a)
+        print("Both roots are equal")
+        print("Root =", x)
+
+    else:
+        real = -b / (2*a)
+        imag = (-d)**0.5 / (2*a)
+        print("Complex roots are:")
+        print(real, "+", imag, "i")
+        print(real, "-", imag, "i")
+

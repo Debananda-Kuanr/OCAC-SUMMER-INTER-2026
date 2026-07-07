@@ -1,0 +1,150 @@
+# Date: 06-07-2026
+# Name: Debananda Kuanr
+
+
+mysql> create database CollegeDB;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| CollegeDB          |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> use CollegeDB;
+Database changed
+
+mysql> create table Student(
+    -> RollNo INT PRIMARY KEY,
+    -> Name VARCHAR(30),
+    -> Age INT,
+    -> Course VARCHAR(20),
+    -> Marks INT
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc Student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| RollNo | int         | NO   | PRI | NULL    |       |
+| Name   | varchar(30) | YES  |     | NULL    |       |
+| Age    | int         | YES  |     | NULL    |       |
+| Course | varchar(20) | YES  |     | NULL    |       |
+| Marks  | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into Student values
+    -> (101,'Rahul',18,'BCA',85),
+    -> (102,'Priya',19,'MCA',90),
+    -> (103,'Amit',18,'BSc',78),
+    -> (104,'Sneha',20,'BCom',88),
+    -> (105,'Rohan',19,'BCA',82);
+Query OK, 5 rows affected (0.02 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+mysql> select * from Student;
++--------+--------+------+--------+-------+
+| RollNo | Name   | Age  | Course | Marks |
++--------+--------+------+--------+-------+
+|    101 | Rahul  |   18 | BCA    |    85 |
+|    102 | Priya  |   19 | MCA    |    90 |
+|    103 | Amit   |   18 | BSc    |    78 |
+|    104 | Sneha  |   20 | BCom   |    88 |
+|    105 | Rohan  |   19 | BCA    |    82 |
++--------+--------+------+--------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select Name,Marks from Student;
++--------+-------+
+| Name   | Marks |
++--------+-------+
+| Rahul  |    85 |
+| Priya  |    90 |
+| Amit   |    78 |
+| Sneha  |    88 |
+| Rohan  |    82 |
++--------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from Student where Marks>80;
++--------+--------+------+--------+-------+
+| RollNo | Name   | Age  | Course | Marks |
++--------+--------+------+--------+-------+
+|    101 | Rahul  |   18 | BCA    |    85 |
+|    102 | Priya  |   19 | MCA    |    90 |
+|    104 | Sneha  |   20 | BCom   |    88 |
+|    105 | Rohan  |   19 | BCA    |    82 |
++--------+--------+------+--------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from Student where Course='BCA';
++--------+--------+------+--------+-------+
+| RollNo | Name   | Age  | Course | Marks |
++--------+--------+------+--------+-------+
+|    101 | Rahul  |   18 | BCA    |    85 |
+|    105 | Rohan  |   19 | BCA    |    82 |
++--------+--------+------+--------+-------+
+2 rows in set (0.00 sec)
+
+mysql> update Student set Marks=95 where RollNo=102;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Student where RollNo=102;
++--------+-------+------+--------+-------+
+| RollNo | Name  | Age  | Course | Marks |
++--------+-------+------+--------+-------+
+|    102 | Priya |   19 | MCA    |    95 |
++--------+-------+------+--------+-------+
+1 row in set (0.00 sec)
+
+mysql> delete from Student where RollNo=105;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Student;
++--------+--------+------+--------+-------+
+| RollNo | Name   | Age  | Course | Marks |
++--------+--------+------+--------+-------+
+|    101 | Rahul  |   18 | BCA    |    85 |
+|    102 | Priya  |   19 | MCA    |    95 |
+|    103 | Amit   |   18 | BSc    |    78 |
+|    104 | Sneha  |   20 | BCom   |    88 |
++--------+--------+------+--------+-------+
+4 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_CollegeDB |
++---------------------+
+| Student             |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> drop table Student;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> drop database CollegeDB;
+Query OK, 0 rows affected (0.05 sec)
+
+
+
+INT          - Integer numbers
+VARCHAR(n)   - Variable-length text
+CHAR(n)      - Fixed-length text
+FLOAT        - Decimal numbers
+DOUBLE       - Large decimal numbers
+DATE         - Date (YYYY-MM-DD)
+TIME         - Time (HH:MM:SS)
+DATETIME     - Date and Time
+BOOLEAN      - TRUE/FALSE values
+TEXT         - Long text

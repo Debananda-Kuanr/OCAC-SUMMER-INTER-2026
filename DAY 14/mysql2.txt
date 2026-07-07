@@ -1,0 +1,467 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 21
+Server version: 8.0.43 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use OCAC
+Database changed
+mysql> select * from student;
++--------+-------+------+--------+-------+
+| RollNo | Name  | Age  | Course | Marks |
++--------+-------+------+--------+-------+
+|    101 | Rahul |   18 | BCA    |    85 |
+|    102 | Priya |   19 | MCA    |    90 |
+|    103 | Amit  |   18 | BSc    |    78 |
+|    104 | Sneha |   20 | BCom   |    88 |
+|    105 | Rohan |   19 | BCA    |    82 |
+|    106 | Neha  |   18 | BSc    |    91 |
+|    107 | Arjun |   20 | MCA    |    76 |
+|    108 | Pooja |   19 | BCom   |    84 |
++--------+-------+------+--------+-------+
+8 rows in set (0.14 sec)
+
+mysql> select * from student where rollno=105
+    -> ;
++--------+-------+------+--------+-------+
+| RollNo | Name  | Age  | Course | Marks |
++--------+-------+------+--------+-------+
+|    105 | Rohan |   19 | BCA    |    82 |
++--------+-------+------+--------+-------+
+1 row in set (0.02 sec)
+
+mysql> select name from student where rollno=105;
++-------+
+| name  |
++-------+
+| Rohan |
++-------+
+1 row in set (0.02 sec)
+
+mysql> select Name ,course from student where rollno>103;
++-------+--------+
+| Name  | course |
++-------+--------+
+| Sneha | BCom   |
+| Rohan | BCA    |
+| Neha  | BSc    |
+| Arjun | MCA    |
+| Pooja | BCom   |
++-------+--------+
+5 rows in set (0.02 sec)
+
+mysql> select name,rollno from student where rollno in (102,103,104);
++-------+--------+
+| name  | rollno |
++-------+--------+
+| Priya |    102 |
+| Amit  |    103 |
+| Sneha |    104 |
++-------+--------+
+3 rows in set (0.02 sec)
+
+mysql> select name from student where rollno between 2 and 4;
+Empty set (0.02 sec)
+
+mysql> select name from student where rollno between 102 and 104;
++-------+
+| name  |
++-------+
+| Priya |
+| Amit  |
+| Sneha |
++-------+
+3 rows in set (0.00 sec)
+
+mysql> select name from student where rollno>102 and rollno<104;
++------+
+| name |
++------+
+| Amit |
++------+
+1 row in set (0.00 sec)
+
+mysql> select * from student where not rollno=5;
++--------+-------+------+--------+-------+
+| RollNo | Name  | Age  | Course | Marks |
++--------+-------+------+--------+-------+
+|    101 | Rahul |   18 | BCA    |    85 |
+|    102 | Priya |   19 | MCA    |    90 |
+|    103 | Amit  |   18 | BSc    |    78 |
+|    104 | Sneha |   20 | BCom   |    88 |
+|    105 | Rohan |   19 | BCA    |    82 |
+|    106 | Neha  |   18 | BSc    |    91 |
+|    107 | Arjun |   20 | MCA    |    76 |
+|    108 | Pooja |   19 | BCom   |    84 |
++--------+-------+------+--------+-------+
+8 rows in set (0.02 sec)
+
+mysql> select * from student where not rollno=105;
++--------+-------+------+--------+-------+
+| RollNo | Name  | Age  | Course | Marks |
++--------+-------+------+--------+-------+
+|    101 | Rahul |   18 | BCA    |    85 |
+|    102 | Priya |   19 | MCA    |    90 |
+|    103 | Amit  |   18 | BSc    |    78 |
+|    104 | Sneha |   20 | BCom   |    88 |
+|    106 | Neha  |   18 | BSc    |    91 |
+|    107 | Arjun |   20 | MCA    |    76 |
+|    108 | Pooja |   19 | BCom   |    84 |
++--------+-------+------+--------+-------+
+7 rows in set (0.00 sec)
+
+
+
+mysql> select name from student where name like "R%";
++-------+
+| name  |
++-------+
+| Rahul |
+| Rohan |
++-------+
+2 rows in set (0.00 sec)
+
+
+mysql> select name from student where name like "_a%";
++-------+
+| name  |
++-------+
+| Rahul |
++-------+
+1 row in set (0.02 sec)
+
+mysql> select name from student where name like "__a%";
+Empty set (0.00 sec)
+
+mysql> select name from student where name like "__i%";
++-------+
+| name  |
++-------+
+| Priya |
+| Amit  |
++-------+
+2 rows in set (0.00 sec)
+
+mysql> select name from student where name like "__r%";
+Empty set (0.00 sec)
+
+mysql> select * from student;
++--------+-------+------+--------+-------+
+| RollNo | Name  | Age  | Course | Marks |
++--------+-------+------+--------+-------+
+|    101 | Rahul |   18 | BCA    |    85 |
+|    102 | Priya |   19 | MCA    |    90 |
+|    103 | Amit  |   18 | BSc    |    78 |
+|    104 | Sneha |   20 | BCom   |    88 |
+|    105 | Rohan |   19 | BCA    |    82 |
+|    106 | Neha  |   18 | BSc    |    91 |
+|    107 | Arjun |   20 | MCA    |    76 |
+|    108 | Pooja |   19 | BCom   |    84 |
++--------+-------+------+--------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select name from student where name like "____";
++------+
+| name |
++------+
+| Amit |
+| Neha |
++------+
+2 rows in set (0.03 sec)
+
+
+mysql>
+mysql> select MIN(Marks) from student;
++------------+
+| MIN(Marks) |
++------------+
+|         76 |
++------------+
+1 row in set (0.00 sec)
+
+
+mysql> select * from student where marks = (select MIN(marks) from student);
++--------+-------+------+--------+-------+
+| RollNo | Name  | Age  | Course | Marks |
++--------+-------+------+--------+-------+
+|    107 | Arjun |   20 | MCA    |    76 |
++--------+-------+------+--------+-------+
+1 row in set (0.05 sec)
+
+mysql> select count(rollno) from student;
++---------------+
+| count(rollno) |
++---------------+
+|             8 |
++---------------+
+1 row in set (0.26 sec)
+
+mysql> select avg(marks) from student;
++------------+
+| avg(marks) |
++------------+
+|    84.2500 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select name from student where marks = (select MIN(marks) from student);
++-------+
+| name  |
++-------+
+| Arjun |
++-------+
+1 row in set (0.02 sec)
+
+mysql> select name from student where marks = (select Max(marks) from student);
++------+
+| name |
++------+
+| Neha |
++------+
+1 row in set (0.08 sec)
+
+
+mysql> select name from student where marks=(SELECT MAX(Marks) from student where marks<(select max(marks) from student));
++-------+
+| name  |
++-------+
+| Priya |
++-------+
+1 row in set (0.02 sec)
+
+
+mysql> create table emp
+    -> (
+    -> empid int primary key,
+    -> Username varchar(30),
+    -> Password varchar(30));
+Query OK, 0 rows affected (1.21 sec)
+
+mysql> desc emp;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| empid    | int         | NO   | PRI | NULL    |       |
+| Username | varchar(30) | YES  |     | NULL    |       |
+| Password | varchar(30) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+mysql> insert into emp values
+    -> (101,"Debananda","Deba@12")
+    -> ,(101,"Sibananda","Siba@12");
+ERROR 1062 (23000): Duplicate entry '101' for key 'emp.PRIMARY'
+
+
+mysql> insert into emp values
+    -> (101,"Debananda","Deba@12"),
+    -> (102,"Sibananda","Siba@12");
+Query OK, 2 rows affected (0.04 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from emp;
++-------+-----------+----------+
+| empid | Username  | Password |
++-------+-----------+----------+
+|   101 | Debananda | Deba@12  |
+|   102 | Sibananda | Siba@12  |
++-------+-----------+----------+
+2 rows in set (0.00 sec)
+
+mysql> Alter table emp add Email varchar(45);
+Query OK, 0 rows affected (0.28 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from emp;
++-------+-----------+----------+-------+
+| empid | Username  | Password | Email |
++-------+-----------+----------+-------+
+|   101 | Debananda | Deba@12  | NULL  |
+|   102 | Sibananda | Siba@12  | NULL  |
++-------+-----------+----------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into emp values
+    -> (103,"Gopal","Gopal@12","gopal@gmail.com"),
+    -> (104,"Pratima","Pratima@12","pratima@gmail.com"),
+    -> (105,"Subhashree","subhashree@12","subhashree@gmail.com"),
+    -> (106,"Debashree","Debashree@12","debashree@gmail.com"),
+    -> (107,"Smrutiranjan","Smrutiranjan@12","smrutiranjan@gmail.com"),
+    -> (108,"Niranjan","Niranjan@12","niranjan@gmail.com"),
+    -> (109,"Ganesh","Ganesh@12","ganesh@gmail.com"),
+    -> (110,"Mitarani","Mitarani@12","mitarani@gmail.com");
+Query OK, 8 rows affected (0.03 sec)
+Records: 8  Duplicates: 0  Warnings: 0
+
+mysql> select * from emp;
++-------+--------------+-----------------+------------------------+
+| empid | Username     | Password        | Email                  |
++-------+--------------+-----------------+------------------------+
+|   101 | Debananda    | Deba@12         | NULL                   |
+|   102 | Sibananda    | Siba@12         | NULL                   |
+|   103 | Gopal        | Gopal@12        | gopal@gmail.com        |
+|   104 | Pratima      | Pratima@12      | pratima@gmail.com      |
+|   105 | Subhashree   | subhashree@12   | subhashree@gmail.com   |
+|   106 | Debashree    | Debashree@12    | debashree@gmail.com    |
+|   107 | Smrutiranjan | Smrutiranjan@12 | smrutiranjan@gmail.com |
+|   108 | Niranjan     | Niranjan@12     | niranjan@gmail.com     |
+|   109 | Ganesh       | Ganesh@12       | ganesh@gmail.com       |
+|   110 | Mitarani     | Mitarani@12     | mitarani@gmail.com     |
++-------+--------------+-----------------+------------------------+
+10 rows in set (0.00 sec)
+
+
+mysql> update emp set Email="debananda@gmail.com" where empid=101;
+Query OK, 1 row affected (0.10 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update emp set Email="sibananda@gmail.com" where empid=102;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from emp;
++-------+--------------+-----------------+------------------------+
+| empid | Username     | Password        | Email                  |
++-------+--------------+-----------------+------------------------+
+|   101 | Debananda    | Deba@12         | debananda@gmail.com    |
+|   102 | Sibananda    | Siba@12         | sibananda@gmail.com    |
+|   103 | Gopal        | Gopal@12        | gopal@gmail.com        |
+|   104 | Pratima      | Pratima@12      | pratima@gmail.com      |
+|   105 | Subhashree   | subhashree@12   | subhashree@gmail.com   |
+|   106 | Debashree    | Debashree@12    | debashree@gmail.com    |
+|   107 | Smrutiranjan | Smrutiranjan@12 | smrutiranjan@gmail.com |
+|   108 | Niranjan     | Niranjan@12     | niranjan@gmail.com     |
+|   109 | Ganesh       | Ganesh@12       | ganesh@gmail.com       |
+|   110 | Mitarani     | Mitarani@12     | mitarani@gmail.com     |
++-------+--------------+-----------------+------------------------+
+10 rows in set (0.00 sec)
+
+
+mysql> update emp set username="Gopal Kuanr" where Username="Gopal";
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from emp;
++-------+--------------+-----------------+------------------------+
+| empid | Username     | Password        | Email                  |
++-------+--------------+-----------------+------------------------+
+|   101 | Debananda    | Deba@12         | debananda@gmail.com    |
+|   102 | Sibananda    | Siba@12         | sibananda@gmail.com    |
+|   103 | Gopal Kuanr  | Gopal@12        | gopal@gmail.com        |
+|   104 | Pratima      | Pratima@12      | pratima@gmail.com      |
+|   105 | Subhashree   | subhashree@12   | subhashree@gmail.com   |
+|   106 | Debashree    | Debashree@12    | debashree@gmail.com    |
+|   107 | Smrutiranjan | Smrutiranjan@12 | smrutiranjan@gmail.com |
+|   108 | Niranjan     | Niranjan@12     | niranjan@gmail.com     |
+|   109 | Ganesh       | Ganesh@12       | ganesh@gmail.com       |
+|   110 | Mitarani     | Mitarani@12     | mitarani@gmail.com     |
++-------+--------------+-----------------+------------------------+
+
+
+mysql> update emp set username="Debananda Kuanr",Password="Debananda@12" where empid=101;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from emp;
++-------+-----------------+-----------------+------------------------+
+| empid | Username        | Password        | Email                  |
++-------+-----------------+-----------------+------------------------+
+|   101 | Debananda Kuanr | Debananda@12    | debananda@gmail.com    |
+|   102 | Sibananda       | Siba@12         | sibananda@gmail.com    |
+|   103 | Gopal Kuanr     | Gopal@12        | gopal@gmail.com        |
+|   104 | Pratima         | Pratima@12      | pratima@gmail.com      |
+|   105 | Subhashree      | subhashree@12   | subhashree@gmail.com   |
+|   106 | Debashree       | Debashree@12    | debashree@gmail.com    |
+|   107 | Smrutiranjan    | Smrutiranjan@12 | smrutiranjan@gmail.com |
+|   108 | Niranjan        | Niranjan@12     | niranjan@gmail.com     |
+|   109 | Ganesh          | Ganesh@12       | ganesh@gmail.com       |
+|   110 | Mitarani        | Mitarani@12     | mitarani@gmail.com     |
++-------+-----------------+-----------------+------------------------+
+10 rows in set (0.00 sec)
+
+
+mysql> delete from emp where empid=110;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from emp;
++-------+-----------------+-----------------+------------------------+
+| empid | Username        | Password        | Email                  |
++-------+-----------------+-----------------+------------------------+
+|   101 | Debananda Kuanr | Debananda@12    | debananda@gmail.com    |
+|   102 | Sibananda       | Siba@12         | sibananda@gmail.com    |
+|   103 | Gopal Kuanr     | Gopal@12        | gopal@gmail.com        |
+|   104 | Pratima         | Pratima@12      | pratima@gmail.com      |
+|   105 | Subhashree      | subhashree@12   | subhashree@gmail.com   |
+|   106 | Debashree       | Debashree@12    | debashree@gmail.com    |
+|   107 | Smrutiranjan    | Smrutiranjan@12 | smrutiranjan@gmail.com |
+|   108 | Niranjan        | Niranjan@12     | niranjan@gmail.com     |
+|   109 | Ganesh          | Ganesh@12       | ganesh@gmail.com       |
++-------+-----------------+-----------------+------------------------+
+9 rows in set (0.00 sec)
+
+
+mysql> select * from student;
++--------+-------+------+--------+-------+
+| RollNo | Name  | Age  | Course | Marks |
++--------+-------+------+--------+-------+
+|    101 | Rahul |   18 | BCA    |    85 |
+|    102 | Priya |   19 | MCA    |    90 |
+|    103 | Amit  |   18 | BSc    |    78 |
+|    104 | Sneha |   20 | BCom   |    88 |
+|    105 | Rohan |   19 | BCA    |    82 |
+|    106 | Neha  |   18 | BSc    |    91 |
+|    107 | Arjun |   20 | MCA    |    76 |
+|    108 | Pooja |   19 | BCom   |    84 |
++--------+-------+------+--------+-------+
+8 rows in set (0.00 sec)
+
+mysql> delete from student where rollno=105;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from student;
++--------+-------+------+--------+-------+
+| RollNo | Name  | Age  | Course | Marks |
++--------+-------+------+--------+-------+
+|    101 | Rahul |   18 | BCA    |    85 |
+|    102 | Priya |   19 | MCA    |    90 |
+|    103 | Amit  |   18 | BSc    |    78 |
+|    104 | Sneha |   20 | BCom   |    88 |
+|    106 | Neha  |   18 | BSc    |    91 |
+|    107 | Arjun |   20 | MCA    |    76 |
+|    108 | Pooja |   19 | BCom   |    84 |
++--------+-------+------+--------+-------+
+7 rows in set (0.00 sec)
+
+
+mysql> show tables;
++----------------+
+| Tables_in_ocac |
++----------------+
+| emp            |
+| login          |
+| student        |
+| students       |
++----------------+
+4 rows in set (0.18 sec)
+
+mysql> select * from login;
+Empty set (0.03 sec)
+
+mysql> drop table login;
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_ocac |
++----------------+
+| emp            |
+| student        |
+| students       |
++----------------+
+3 rows in set (0.00 sec)
