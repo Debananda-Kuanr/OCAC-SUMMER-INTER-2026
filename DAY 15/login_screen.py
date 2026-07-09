@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 window=Tk()
 window.title("Login")
@@ -14,6 +15,14 @@ def login_sys():
 
     if user_username == default_username and user_password == default_password:
         my_status = "           Login Successful !!"
+    elif len(username.get())==0 and len(password.get()) ==0:
+        my_status = "Enter Username and Password"
+        messagebox.showinfo("Warning","Username Password is blank\nPlease Enter")
+
+    elif len(username.get())==0:
+        my_status = "Enter Username"
+    elif len(password.get())==0:
+        my_status = "Enter Password"
     elif user_username != default_username and user_password != default_password:
         my_status = "Invalid Username and Password"
     elif user_username != default_username:
@@ -22,11 +31,16 @@ def login_sys():
         my_status = "  Invalid Password !!"
 
     status.delete(0, END)
-    status.insert(0, my_status)
+    status.insert(1, my_status)
+
 def clear_screen():
     username.delete(0,END)
     password.delete(0,END)
     status.delete(0, END)
+
+def close_screen():
+    window.destroy()
+
 
 top_label=Label(window,text="User Login",fg='green',font=("helvetica",20,"bold"))
 top_label.place(x=100,y=40)
@@ -49,9 +63,11 @@ status=Entry(window,fg="black",bg="light blue",bd=2,font=("helvetica",10,'bold')
 status.place(x=104,y=210)
 
 
-btn1=Button(window,text="Clear",fg='White',bg='red',font=("helvetica",12,"bold"),width=8,command=clear_screen)
-btn1.place(x=80,y=270)
-btn2=Button(window,text="Login",fg='White',bg='green',font=("helvetica",12,"bold"),width=8,command=login_sys)
-btn2.place(x=190,y=270)
+btn2=Button(window,text="Close",fg='black',bg='yellow',font=("helvetica",12,"bold"),width=8,command=close_screen)
+btn2.place(x=30,y=270)
+btn2=Button(window,text="Clear",fg='White',bg='red',font=("helvetica",12,"bold"),width=8,command=clear_screen)
+btn2.place(x=130,y=270)
+btn3=Button(window,text="Login",fg='White',bg='green',font=("helvetica",12,"bold"),width=8,command=login_sys)
+btn3.place(x=230,y=270)
 
 window.mainloop()

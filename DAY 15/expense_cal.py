@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 window=Tk()
 window.title("Finance Management Software")
@@ -7,32 +8,94 @@ window.resizable(False,False)
 
 
 def calculation():
-    income1 = int(inc_mon.get())
-    income2 = int(inc_tue.get())
-    income3 = int(inc_wed.get())
-    income4 = int(inc_thu.get())
-    income5 = int(inc_fri.get())
-    income6 = int(inc_sat.get())
-    income7 = int(inc_sun.get())
+    income1 = inc_mon.get()
+    income2 = inc_tue.get()
+    income3 = inc_wed.get()
+    income4 = inc_thu.get()
+    income5 = inc_fri.get()
+    income6 = inc_sat.get()
+    income7 = inc_sun.get()
 
-    expense1 = int(exp_mon.get())
-    expense2 = int(exp_tue.get())
-    expense3 = int(exp_wed.get())
-    expense4 = int(exp_thu.get())
-    expense5 = int(exp_fri.get())
-    expense6 = int(exp_sat.get())
-    expense7 = int(exp_sun.get())
+    expense1 = exp_mon.get()
+    expense2 = exp_tue.get()
+    expense3 = exp_wed.get()
+    expense4 = exp_thu.get()
+    expense5 = exp_fri.get()
+    expense6 = exp_sat.get()
+    expense7 = exp_sun.get()
 
-    total_income =income1 + income2 + income3 +income4 + income5 + income6 +income7
-    total_expense = expense1 + expense2 + expense3 + expense4 + expense5 + expense6 + expense7
-    total_savings = total_income - total_expense
 
-    total_inc.delete(0,END)
-    total_exp.delete(0,END)
-    avl_bal.delete(0,END)
-    total_inc.insert(1,str(total_income))
-    total_exp.insert(1,str(total_expense))
-    avl_bal.insert(1,str(total_savings))
+    if len(inc_mon.get())==0 and len(inc_tue.get())==0 and len(inc_wed.get())==0 and len(inc_thu.get())==0 and len(inc_fri.get())==0 and len(inc_sat.get())==0 and len(inc_sun.get())==0 and len(exp_mon.get())==0 and len(exp_tue.get())==0 and len(exp_wed.get())==0 and len(exp_thu.get())==0 and len(exp_fri.get())==0 and len(exp_sat.get())==0 and len(exp_sun.get())==0:
+        messagebox.showinfo("Warning","All Fields are blank\nAll Must be Filled")
+
+    elif len(inc_mon.get())==0 :
+        messagebox.showinfo("Warning","Mon- Income Field is Blank\nPlease Enter")
+    elif len(inc_tue.get())==0 :
+        messagebox.showinfo("Warning","Tue- Income Field is Blank\nPlease Enter")
+    elif len(inc_wed.get())==0 :
+        messagebox.showinfo("Warning","Wed- Income Field is Blank\nPlease Enter")
+    elif len(inc_thu.get())==0 :
+        messagebox.showinfo("Warning","Thu- Income Field is Blank\nPlease Enter")
+    elif len(inc_fri.get())==0 :
+        messagebox.showinfo("Warning","Fri- Income Field is Blank\nPlease Enter")
+    elif len(inc_sat.get())==0 :
+        messagebox.showinfo("Warning","Sat- Income Field is Blank\nPlease Enter")
+    elif len(inc_sun.get())==0 :
+        messagebox.showinfo("Warning","Sun- Income Field is Blank\nPlease Enter")
+    elif len(exp_mon.get())==0 :
+        messagebox.showinfo("Warning","Mon- Expense Field is Blank\nPlease Enter")
+    elif len(exp_tue.get())==0 :
+        messagebox.showinfo("Warning","Tue- Expense Field is Blank\nPlease Enter")
+    elif len(exp_wed.get())==0 :
+        messagebox.showinfo("Warning","Wed- Expense Field is Blank\nPlease Enter")
+    elif len(exp_thu.get())==0 :
+        messagebox.showinfo("Warning","Thu- Expense Field is Blank\nPlease Enter")
+    elif len(exp_fri.get())==0 :
+        messagebox.showinfo("Warning","Fri- Expense Field is Blank\nPlease Enter")
+    elif len(exp_sat.get())==0 :
+        messagebox.showinfo("Warning","Sat- Expense Field is Blank\nPlease Enter")
+    elif len(exp_sun.get())==0 :
+        messagebox.showinfo("Warning","Sun- Expense Field is Blank\nPlease Enter")
+    elif int(income1)<0 :
+        messagebox.showinfo("Warning","Mon- Income Must be Greater than 0")
+    elif int(income2)<0 :
+        messagebox.showinfo("Warning","Tue- Income Must be Greater than 0")
+    elif int(income3)<0 :
+        messagebox.showinfo("Warning","Wed- Income Must be Greater than 0")
+    elif int(income4)<0 :
+        messagebox.showinfo("Warning","Thu- Income Must be Greater than 0")
+    elif int(income5)<0 :
+        messagebox.showinfo("Warning","Fri- Income Must be Greater than 0")
+    elif int(income6)<0 :
+        messagebox.showinfo("Warning","Sat- Income Must be Greater than 0")
+    elif int(income7)<0 :
+        messagebox.showinfo("Warning","Sun- Income Must be Greater than 0")
+    elif int(expense1)<0:
+        messagebox.showinfo("Warning","Mon- Expense Must be Greater than 0")
+    elif int(expense2)<0:
+        messagebox.showinfo("Warning","Tue- Expense Must be Greater than 0")
+    elif int(expense2)<0:
+        messagebox.showinfo("Warning","Wed- Expense Must be Greater than 0")
+    elif int(expense4)<0:
+        messagebox.showinfo("Warning","Thu- Expense Must be Greater than 0")
+    elif int(expense5)<0:
+        messagebox.showinfo("Warning","Fri- Expense Must be Greater than 0")
+    elif int(expense6)<0:
+        messagebox.showinfo("Warning","Sat- Expense Must be Greater than 0")
+    elif int(expense7)<0:
+        messagebox.showinfo("Warning","Sun- Expense Must be Greater than 0")
+    
+    else:
+        total_income =int(income1) + int(income2) + int(income3) +int(income4) + int(income5) + int(income6) +int(income7)
+        total_expense = int(expense1) + int(expense2) + int(expense3) + int(expense4) + int(expense5) + int(expense6) + int(expense7)
+        total_savings = total_income - total_expense
+
+        total_inc.delete(0,END)
+        total_exp.delete(0,END)
+        avl_bal.delete(0,END)
+        total_inc.insert(1,str(total_income))
+        total_exp.insert(1,str(total_expense))
+        avl_bal.insert(1,str(total_savings))
 
 
 top_label=Label(window,text="Income Expense Management",fg='green',font=("helvetica",20,"bold"))
@@ -127,6 +190,5 @@ output.place(x=70,y=600)
 
 avl_bal = Entry(window, fg="black",bg="yellow", bd=1, width=19, font=("helvetica", 16,"bold"))
 avl_bal.place(x=300, y=602)
-
 
 window.mainloop()

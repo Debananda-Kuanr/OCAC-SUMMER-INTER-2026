@@ -49,6 +49,7 @@ The training focuses on building strong Python fundamentals, logical thinking, p
 | Day 13 | MySQL introduction, creating databases and tables, inserting records, viewing table structure, selecting data, filtering with `WHERE`, updating records, deleting records, dropping tables and databases, and understanding SQL data types |
 | Day 14 | Advanced MySQL practice, `IN`, `BETWEEN`, `NOT`, `LIKE` patterns, aggregate functions such as `MIN`, `MAX`, `COUNT`, `AVG`, subqueries, and primary key constraint handling |
 | Day 15 | Tkinter GUI basics, creating windows, setting title and size, using labels, entry widgets, buttons, and building simple calculator and login screen interfaces |
+| Day 16 | Tkinter login form connected with MySQL database, username and password validation, status display, clear and close buttons, and database-driven authentication logic |
 
 
 
