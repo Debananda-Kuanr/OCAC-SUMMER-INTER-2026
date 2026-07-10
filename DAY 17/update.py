@@ -45,8 +45,6 @@ def register_new():
             messagebox.showinfo("Warning","Database Error")
 
 
-
-
 def close_screen():
     window.destroy()
 
