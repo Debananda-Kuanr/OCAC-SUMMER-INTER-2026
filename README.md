@@ -55,6 +55,14 @@ The training focuses on building strong Python fundamentals, logical thinking, p
 | Day 16 | Tkinter login form connected with MySQL database, username and password validation, status display, clear and close buttons, and database-driven authentication logic |
 | Day 17 | Tkinter and MySQL registration system, new user sign-up form, password update screen, admin display of registered users, and working with the `registration` table |
 
+### Practice Folder: `test`
+
+| File | Practice Work |
+|---|---|
+| `login.py` | Tkinter login screen connected to the `registration` table with clear, close, and forgot-password flow |
+| `forgot.py` | Password recovery screen using roll number and security question verification |
+| `admin_view.py` | Admin view to display all registered users in a list with scrolling support |
+
 
 
 ## Skills Developed
