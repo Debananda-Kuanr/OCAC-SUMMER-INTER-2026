@@ -7,7 +7,7 @@ import mysql.connector
 
 window = Tk()
 window.title("Login")
-window.geometry("450x380+550+180")
+window.geometry("400x380+550+180")
 window.resizable(False, False)
 
 
@@ -93,7 +93,7 @@ top_label = Label(
     font=("helvetica", 20, "bold")
 )
 
-top_label.place(x=150, y=35)
+top_label.place(x=130, y=35)
 
 
 # USERNAME
@@ -144,7 +144,7 @@ forgot_btn = Button(
     command=forgot_password
 )
 
-forgot_btn.place(x=245, y=195)
+forgot_btn.place(x=235, y=195)
 
 
 # STATUS
@@ -183,7 +183,7 @@ btn1 = Button(
     command=close_screen
 )
 
-btn1.place(x=55, y=310)
+btn1.place(x=45, y=310)
 
 
 btn2 = Button(
@@ -196,7 +196,7 @@ btn2 = Button(
     command=clear_screen
 )
 
-btn2.place(x=180, y=310)
+btn2.place(x=150, y=310)
 
 
 btn3 = Button(
@@ -209,7 +209,7 @@ btn3 = Button(
     command=login_sys
 )
 
-btn3.place(x=305, y=310)
+btn3.place(x=255, y=310)
 
 
 window.mainloop()
