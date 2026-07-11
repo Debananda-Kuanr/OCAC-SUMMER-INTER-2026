@@ -6,7 +6,7 @@ import mysql.connector
 
 window=Tk()
 window.title("Login")
-window.geometry("350x350+600+200")
+window.geometry("400x350+600+200")
 window.resizable(False,False)
 
 # Database Connection With Python 
