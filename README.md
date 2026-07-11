@@ -42,14 +42,18 @@ The training focuses on building strong Python fundamentals, logical thinking, p
 | Day 11 | Lists, list traversal, append, reverse, extend, slicing, and list update operations |
 | Day 12 | List deletion methods, `remove`, `insert`, `pop`, `clear`, `count`, `copy`, set basics, set operations, and quadratic equation solving using `math.sqrt` |
 
-### Days 13-14: Covered Dababases (MySQL) and Frontend Tkinter
+### Days 13-14: Covered Databases (MySQL)
 
 | Day | Topics Covered |
 |---|---|
 | Day 13 | MySQL introduction, creating databases and tables, inserting records, viewing table structure, selecting data, filtering with `WHERE`, updating records, deleting records, dropping tables and databases, and understanding SQL data types |
 | Day 14 | Advanced MySQL practice, `IN`, `BETWEEN`, `NOT`, `LIKE` patterns, aggregate functions such as `MIN`, `MAX`, `COUNT`, `AVG`, subqueries, and primary key constraint handling |
+
+### Days 15-17: Covered Tkinter GUI and MySQL Integration
+
 | Day 15 | Tkinter GUI basics, creating windows, setting title and size, using labels, entry widgets, buttons, and building simple calculator and login screen interfaces |
 | Day 16 | Tkinter login form connected with MySQL database, username and password validation, status display, clear and close buttons, and database-driven authentication logic |
+| Day 17 | Tkinter and MySQL registration system, new user sign-up form, password update screen, admin display of registered users, and working with the `registration` table |
 
 
 
