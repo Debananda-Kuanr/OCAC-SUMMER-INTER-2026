@@ -76,15 +76,12 @@ The training focuses on building strong Python fundamentals, logical thinking, p
 
 Images for the project report will be added in a two-column layout, with 2 images in each row for a clean presentation.
 
-| Image 1 | Image 2 |
-|---|---|
-| Add screenshot here | Add screenshot here |
 
-| Image 3 | Image 4 |
-|---|---|
-| Add screenshot here | Add screenshot here |
-
-
+<img width="932" height="603" alt="image" src="https://github.com/user-attachments/assets/20ab7731-08c9-4cd8-aa94-62f3929d2bec" /><img width="922" height="595" alt="image" src="https://github.com/user-attachments/assets/141cc7a0-51d1-442e-8aa3-7823f49ecd13" />
+<img width="1023" height="669" alt="image" src="https://github.com/user-attachments/assets/165a06c5-4755-4365-9b4a-f9b23a450ece" />
+<img width="1536" height="864" alt="image" src="https://github.com/user-attachments/assets/9052acb9-915c-4aaf-9cf3-d93a88f3d313" />
+<img width="1536" height="818" alt="image" src="https://github.com/user-attachments/assets/cbeace8e-82ab-4091-8eb1-a8072d795397" />
+<img width="1536" height="816" alt="image" src="https://github.com/user-attachments/assets/716cf53d-d26f-4710-8dd3-4b72a34f935a" />
 
 ## Skills Developed
 
