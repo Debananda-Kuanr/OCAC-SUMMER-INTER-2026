@@ -53,7 +53,16 @@ The training focuses on building strong Python fundamentals, logical thinking, p
 
 | Day 15 | Tkinter GUI basics, creating windows, setting title and size, using labels, entry widgets, buttons, and building simple calculator and login screen interfaces |
 | Day 16 | Tkinter login form connected with MySQL database, username and password validation, status display, clear and close buttons, and database-driven authentication logic |
-| Day 17 | Tkinter and MySQL registration system, new user sign-up form, password update screen, admin display of registered users, and working with the `registration` table |
+| Day 17 | Tkinter and MySQL registration form, roll number validation, name, username, password, security question and answer fields, database insertion into the `registration` table, and form reset controls |
+
+### Days 18-21: OCAC Project Development
+
+| Day | Topics Covered |
+|---|---|
+| Day 18 | Project structure planning, module organization, and starting the OCAC project architecture with common GUI, admin, and student folders |
+| Day 19 | Login, registration, and forgot-password flow development for the shared application interface |
+| Day 20 | Admin dashboard, student dashboard, fee management, and payment workflow implementation |
+| Day 21 | Reports, profile screens, password change flow, bill generation, and project integration testing |
 
 ### Practice Folder: `test`
 
@@ -62,6 +71,18 @@ The training focuses on building strong Python fundamentals, logical thinking, p
 | `login.py` | Tkinter login screen connected to the `registration` table with clear, close, and forgot-password flow |
 | `forgot.py` | Password recovery screen using roll number and security question verification |
 | `admin_view.py` | Admin view to display all registered users in a list with scrolling support |
+
+### Image Gallery
+
+Images for the project report will be added in a two-column layout, with 2 images in each row for a clean presentation.
+
+| Image 1 | Image 2 |
+|---|---|
+| Add screenshot here | Add screenshot here |
+
+| Image 3 | Image 4 |
+|---|---|
+| Add screenshot here | Add screenshot here |
 
 
 
